@@ -1,9 +1,9 @@
 {
-  "name": "garph",
+  "name": "@lorefnon/garph",
   "description": "A tRPC-like schema-builder for GraphQL",
   "repository": {
     "type": "git",
-    "url": "https://github.com/stepci/garph"
+    "url": "https://github.com/lorefnon/garph"
   },
   "version": "0.6.6",
   "license": "MIT",

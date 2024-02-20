@@ -1,4 +1,10 @@
-# garph
+# garph [WIP]
+
+This fork is an unofficial continuation of [garph](https://github.com/stepci/garph) with a few experimental feature additions.
+
+Original README preserved below:
+
+---
 
 https://user-images.githubusercontent.com/10400064/222474710-bc263775-06b8-4a78-8099-676a9ad3c7a4.mov
 
