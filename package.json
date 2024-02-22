@@ -5,7 +5,7 @@
     "type": "git",
     "url": "https://github.com/lorefnon/garph"
   },
-  "version": "0.7.0",
+  "version": "0.7.1",
   "license": "MIT",
   "main": "dist/index.js",
   "scripts": {
