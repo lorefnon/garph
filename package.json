@@ -9,6 +9,7 @@
   "license": "MIT",
   "main": "dist/index.js",
   "scripts": {
+    "prepublishOnly": "pnpm run build",
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview",
