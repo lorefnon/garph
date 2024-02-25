@@ -165,8 +165,10 @@ export type InferUnionNames<T> = T extends AnyUnion ? ObjectToUnion<T['_inner']>
 export type InferResolvers<T extends AnyTypes, X extends InferResolverConfig> = {
   [K in keyof T]: K extends 'Subscription' ? {
     [G in keyof T[K]['_shape']]?: {
-      subscribe: (parent: {}, args: InferArg<T[K]['_shape'][G]>, context: X['context'], info: GraphQLResolveInfo) => MaybePromise<AsyncIterator<{ [G in keyof T[K]['_shape']]: InferInternal<T[K]['_shape'][G]> }>>
-      resolve?: (value: InferInternal<T[K]['_shape'][G]>, args: InferArg<T[K]['_shape'][G]>, context: X['context'], info: GraphQLResolveInfo) => MaybePromise<InferInternal<T[K]['_shape'][G]>>
+      subscribe: (parent: {}, args: InferArg<T[K]['_shape'][G]>, context: X['context'], info: GraphQLResolveInfo) => MaybePromise<AsyncIterator<{
+        [key in G]: InferInternal<T[K]['_shape'][G]>
+      }>>
+      resolve?: (value: Infer<T[K]['_shape'][G]>, args: InferArg<T[K]['_shape'][G]>, context: X['context'], info: GraphQLResolveInfo) => MaybePromise<InferInternal<T[K]['_shape'][G]>>
     }
   } : {
     [G in keyof T[K]['_shape']]?: (parent: K extends GraphQLRootType ? {} : InferInternal<T[K]>, args: InferArg<T[K]['_shape'][G]>, context: X['context'], info: GraphQLResolveInfo) => MaybePromise<MaybeFunction<InferInternal<T[K]['_shape'][G]>>> | AsyncGenerator<InferInternal<T[K]['_shape'][G]['_shape']>>
